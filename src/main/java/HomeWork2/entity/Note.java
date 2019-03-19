@@ -6,18 +6,20 @@ import java.util.Objects;
 public class Note {
     private String text;
     private Date date;
+    private NoteType noteType;
 
-    public Note(String text, Date date) {
-        if ((text == null) || (date == null)) {
+    public Note(String text, Date date, NoteType noteType) {
+        if ((text == null) || (date == null) || (noteType == null)) {
             throw new RuntimeException("object fields are null");
         }
         this.text = text;
         this.date = date;
+        this.noteType = noteType;
     }
 
     @Override
     public String toString() {
-        return "[" + date + "]" + " [" + text + "]";
+        return "[" + date + "]" + " [" + NoteType.getRusName(noteType) + "]" + " ["  + text + "]";
     }
 
     @Override
@@ -26,11 +28,12 @@ public class Note {
         if (o == null || getClass() != o.getClass()) return false;
         Note note = (Note) o;
         return text.equals(note.text) &&
-                date.equals(note.date);
+                date.equals(note.date) &&
+                noteType == note.noteType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(text, date);
+        return Objects.hash(text, date, noteType);
     }
 }

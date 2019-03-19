@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class NoteBookProviderTest {
-    NoteBookProvider nbp = NoteBookProvider.getInstance();
+    NoteBookProvider nbp = InMemoryNoteBookProvider.getInstance();
 
     @Test
     public void getRandomItemFromNoteBooks() {

@@ -18,9 +18,9 @@ public class NoteBookConsoleView {
         System.out.println(noteBook.toString());
     }
 
-    public static void print(NoteBook[] noteBooks) {
-        for (NoteBook noteBook : noteBooks) {
-            System.out.println(noteBook.toString());
-        }
-    }
+//    public static void print(NoteBook[] noteBooks) {
+//        for (NoteBook noteBook : noteBooks) {
+//            System.out.println(noteBook.toString());
+//        }
+//    }
 }
