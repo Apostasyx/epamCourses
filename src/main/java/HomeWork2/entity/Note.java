@@ -19,7 +19,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return "[" + date + "]" + " [" + NoteType.getRusName(noteType) + "]" + " ["  + text + "]";
+        return "[" + date + "]" + " [" + noteType.getRusName() + "]" + " ["  + text + "]";
     }
 
     @Override

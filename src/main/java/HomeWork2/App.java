@@ -23,7 +23,6 @@ public class App {
         System.out.println();
 
         System.out.println("get notebooks array");
-//        NoteBookConsoleView.print(nbp.getNoteBooksArray());
         NoteBookView nbv = new NoteBookView() {
             @Override
             public void printArrayofNoteBook(NoteBook[] noteBooks) {

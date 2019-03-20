@@ -1,12 +1,16 @@
 package HomeWork2.entity;
 
 public enum NoteType {
-    NOTE,
-    TASK;
+    NOTE("Записка"),
+    TASK("Задача");
 
-    public static String getRusName(NoteType noteType){
-        String result = (noteType == NOTE) ? "Записка" : "Задача";
+    private String type;
 
-        return result;
+    NoteType(String type) {
+        this.type = type;
+    }
+
+    public String getRusName() {
+        return this.type;
     }
 }
