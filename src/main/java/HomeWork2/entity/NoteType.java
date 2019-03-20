@@ -11,6 +11,6 @@ public enum NoteType {
     }
 
     public String getRusName() {
-        return this.type;
+        return type;
     }
 }
