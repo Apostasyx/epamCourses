@@ -1,14 +1,14 @@
 package HomeWork2.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Note {
     private String text;
-    private Date date;
+    private LocalDate date;
     private NoteType noteType;
 
-    public Note(String text, Date date, NoteType noteType) {
+    public Note(String text, LocalDate date, NoteType noteType) {
         if ((text == null) || (date == null) || (noteType == null)) {
             throw new RuntimeException("object fields are null");
         }

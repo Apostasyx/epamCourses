@@ -4,7 +4,7 @@ import HomeWork2.entity.Note;
 import HomeWork2.entity.NoteBook;
 import HomeWork2.entity.NoteType;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class InMemoryNoteBookProvider implements NoteBookProvider {
     private static InMemoryNoteBookProvider _instance = null;
@@ -22,20 +22,21 @@ public class InMemoryNoteBookProvider implements NoteBookProvider {
     }
 
     {
+        LocalDate date = LocalDate.now();
         noteBooks = new NoteBook[] {
                 new NoteBook(new Note[] {
-                        new Note("Опять работать?!", new Date(), NoteType.NOTE),
-                        new Note("Нам нужно больше золота!", new Date(), NoteType.NOTE)
+                        new Note("Опять работать?!", date, NoteType.NOTE),
+                        new Note("Нам нужно больше золота!", date, NoteType.NOTE)
                 }),
 
                 new NoteBook(new Note[] {
-                        new Note("За моего отца, короля!", new Date(), NoteType.NOTE),
-                        new Note("Не могу стоять, пока другие работают... Пойду полежу.", new Date(), NoteType.TASK)
+                        new Note("За моего отца, короля!", date, NoteType.NOTE),
+                        new Note("Не могу стоять, пока другие работают... Пойду полежу.", date, NoteType.TASK)
                 }),
 
                 new NoteBook(new Note[] {
-                        new Note("Быстро и дешево выполню любую халтуру!", new Date(), NoteType.TASK),
-                        new Note("Вскрытие показало, что больной спал.", new Date(), NoteType.NOTE)
+                        new Note("Быстро и дешево выполню любую халтуру!", date, NoteType.TASK),
+                        new Note("Вскрытие показало, что больной спал.", date, NoteType.NOTE)
                 })
         };
     }
