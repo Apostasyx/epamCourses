@@ -1,12 +1,11 @@
 package HomeWork2;
 
 import HomeWork2.entity.NoteBook;
-import HomeWork2.util.InMemoryNoteBookProvider;
-import HomeWork2.util.NoteBookConsoleView;
-import HomeWork2.util.NoteBookProvider;
-import HomeWork2.util.NoteBookView;
+import HomeWork2.util.*;
 
 public class App {
+    private static CrazyLogger logger = CrazyLogger.getInstance();
+
     public static void main(String[] args) {
         NoteBookProvider nbp = InMemoryNoteBookProvider.getInstance();
 
@@ -25,12 +24,17 @@ public class App {
         System.out.println("get notebooks array");
         NoteBookView nbv = new NoteBookView() {
             @Override
-            public void printArrayofNoteBook(NoteBook[] noteBooks) {
+            public void printArrayOfNoteBook(NoteBook[] noteBooks) {
+                logger.addMessage("Вывод на экран всего массива NoteBook");
                 for (NoteBook noteBook : noteBooks) {
                     System.out.println(noteBook.toString());
                 }
             }
         };
-        nbv.printArrayofNoteBook(nbp.getNoteBooksArray());
+        nbv.printArrayOfNoteBook(nbp.getNoteBooksArray());
+
+        logger.showAllMessages();
+        System.out.println();
+        logger.showMessages("Получение случайного значения из Notes");
     }
 }

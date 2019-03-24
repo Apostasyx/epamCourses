@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class InMemoryNoteBookProvider implements NoteBookProvider {
     private static InMemoryNoteBookProvider _instance = null;
     private NoteBook[] noteBooks;
+    private static CrazyLogger logger = CrazyLogger.getInstance();
 
     private InMemoryNoteBookProvider() {
 
@@ -43,17 +44,20 @@ public class InMemoryNoteBookProvider implements NoteBookProvider {
 
     @Override
     public NoteBook getRandomItemFromNoteBooks() {
+        logger.addMessage("Получение случайного значения из NoteBooks");
         return noteBooks[(int) (Math.random() * (noteBooks.length))];
     }
 
     @Override
     public Note getRandomItemFromNotes() {
         NoteBook temp = getRandomItemFromNoteBooks();
+        logger.addMessage("Получение случайного значения из Notes");
         return temp.getNotes()[(int) (Math.random() * (temp.getCount()))];
     }
 
     @Override
     public NoteBook[] getNoteBooksArray() {
+        logger.addMessage("Получение всего массива NoteBooks");
         return noteBooks;
     }
 }
